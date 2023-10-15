@@ -10,3 +10,11 @@
 ## Alicia's Favourite Queen:
 **Queen _(Band)_**
 > “Onstage, I am a devil. But I’m hardly a social reject."
+
+
+## Michelle
+
+~Elsa, The Frozen Queen~
+***Queen of the Fairies, Tinkerbell***
+
+"All you need is faith, trust and Pixie Dust"
