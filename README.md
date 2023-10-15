@@ -20,11 +20,14 @@
 ## Maisha
 - Maisha will add her favourite queen code here
 
+**********************************************
+ 
+# requirements.txt
+-  is a file in Python projects that lists all package dependencies, typically with versions, allowing for consistent setup across different environments
+
 
  ## What is .gitignore?
 
  This is a file that contains a list of all the files that need to be ignored by Github.
  Or to put this technically, files that need to remain untracked by git.
  It includes things such as sensitive information and files/folders that are not required for the main project.
-
- 
