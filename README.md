@@ -19,3 +19,7 @@
 
 ## Maisha
 - Maisha will add her favourite queen code here
+
+
+# requirements.txt
+-  is a file in Python projects that lists all package dependencies, typically with versions, allowing for consistent setup across different environments
