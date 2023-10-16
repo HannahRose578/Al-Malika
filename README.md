@@ -18,7 +18,7 @@
 "All you need is faith, trust and Pixie Dust"
 
 ## Maisha
-- Maisha will add her favourite queen code here
+- *My favourite Queen is Mary Queen of Scots from the show Reign*
 
 **********************************************
  
