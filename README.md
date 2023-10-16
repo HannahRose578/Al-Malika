@@ -31,3 +31,6 @@
  This is a file that contains a list of all the files that need to be ignored by Github.
  Or to put this technically, files that need to remain untracked by git.
  It includes things such as sensitive information and files/folders that are not required for the main project.
+
+ # queen_characteristics.txt
+ - a file that lists some characteristics that we may share with our favourite queens
