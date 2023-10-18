@@ -10,6 +10,8 @@ This has been our GitHub workflow:
 8. Merge branches
 9. Delete redundant branches 
 10. Close the pull requests
+11. Create .gitignore
+12. Create requirements.txt
 
 Signed by
 Jacqueline, Alicia, Hannah, Michelle and Maisha
