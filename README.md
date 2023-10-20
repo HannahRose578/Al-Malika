@@ -18,7 +18,7 @@
 "All you need is faith, trust and Pixie Dust"
 
 ## Maisha
-	<sup> My favourite Queen is Mary Queen of Scots from the show Reign</sup>
+	<sup> My favourite Queen is Mary Queen of Scots from the show Reign </sup>
 **********************************************
  
 # requirements.txt
