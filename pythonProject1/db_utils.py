@@ -29,7 +29,7 @@ def execute_query(connection, query, params=None):
 
 def close_connection(connection):
     if connection:
-        connection.close()
+        connection.close() 
 
 
 # Example usage
