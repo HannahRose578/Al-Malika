@@ -53,6 +53,6 @@ You can interact with the API using the provided main.py script. To simulate int
   
 *python main.py*
 
-## Example Interaction
+## Example Usage
 
 When you run *main.py*, you will have the option to view the list of books and make various requests to the API.
