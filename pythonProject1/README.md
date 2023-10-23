@@ -1,4 +1,4 @@
-# Book Club API :books:
+# QUEENS Book Club API :books:
 
 ## Table of Contents
 
