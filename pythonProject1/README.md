@@ -25,11 +25,22 @@ Before running the code, make sure you have the following dependencies installed
 1. **Create a MySQL Database**: Execute the SQL script provided in `sql_script.sql` to create the `BookClub` database and the `Books` table.
 
 2. **Configure Database Connection**:
+
    - Run the following code in MySQL to generate a user:
 
 *CREATE USER 'almalika'@'localhost' IDENTIFIED BY 'cfg2023';
 GRANT ALL PRIVILEGES ON *.* TO 'almalika'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;*
+
+- Open `config.py` and replace the placeholders with your MySQL database details:
+
+   ```python
+   sb_config = {
+       'host': 'local host',
+       'user': 'almalika',
+       'password': 'cfg2023',
+       'db': 'BookClub',
+   }
 
 ## Running the API
 
