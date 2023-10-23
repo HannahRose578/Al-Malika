@@ -1,60 +1,40 @@
 import pymysql
-from config import db_config
-from pymysql import Error
+from pymysql.cursors import DictCursor
+from config import DATABASE_CONFIG
 
-# Create a database connection
+
 def connect_to_db():
     try:
-        db = pymysql.connect(**db_config
-        )
-    except Error as e:
-        print(f"Error connecting to the database: {e}")
-        db = None
+        connection = pymysql.connect(**DATABASE_CONFIG)
+        return connection
+    except pymysql.MySQLError as e:
+        print(f"Error while connecting to MySQL: {e}")
+        return None
 
-# Function to get all books
-def get_books():
+
+def execute_query(connection, query, params=None):
+    if connection is None:
+        print("Connection is not established.")
+        return None
+
     try:
-        cursor = db.cursor()
-        cursor.execute("SELECT * FROM Books")
-        books = cursor.fetchall()
-        cursor.close()
-        return [{'title': title, 'author': author, 'publication_year': year, 'isbn': isbn, 'genre': genre} for
-                (title, author, year, isbn, genre) in books]
-    except Error as e:
-        print(f"Error getting books from the database: {e}")
-        return []
+        with connection.cursor(DictCursor) as cursor:
+            cursor.execute(query, params)
+            result = cursor.fetchall()
+        return result
+    except pymysql.MySQLError as e:
+        print(f"Error while executing query: {e}")
+        return None
 
-# Function to search for books by title or author
-def search_books(query):
-    try:
-        cursor = db.cursor()
-        query = f"%{query}%"
-        cursor.execute("SELECT * FROM Books WHERE title LIKE %s OR author LIKE %s", (query, query))
-        books = cursor.fetchall()
-        cursor.close()
-        return [{'title': title, 'author': author, 'publication_year': year, 'isbn': isbn, 'genre': genre} for
-                (title, author, year, isbn, genre) in books]
-    except Error as e:
-        print(f"Error searching for books: {e}")
-        return []
 
-# Function to add a new book
-def add_book(title, author, publication_year, isbn, genre):
-    try:
-        cursor = db.cursor()
-        cursor.execute("INSERT INTO Books (title, author, publication_year, isbn, genre) VALUES (%s, %s, %s, %s, %s)",
-                       (title, author, publication_year, isbn, genre))
-        db.commit()
-        cursor.close()
-        return {'title': title, 'author': author, 'publication_year': publication_year, 'isbn': isbn, 'genre': genre}
-    except Error as e:
-        print(f"Error adding a new book: {e}")
-        return {}
+def close_connection(connection):
+    if connection:
+        connection.close()
 
-# Close the database connection when done
-def close_db_connection():
-    if db:
-        db.close()
 
-# Call close_db_connection() when you're done using the database
-# Example: close_db_connection()
+# Example usage
+# conn = connect_to_db()
+# if conn:
+#     result = execute_query(conn, "SELECT * FROM some_table")
+#     print(result)
+#     close_connection(conn)
