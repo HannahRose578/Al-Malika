@@ -6,6 +6,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'almalika'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
 CREATE TABLE Books (
+id INT AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(200),
 author VARCHAR(200),
 publication_year INT,
