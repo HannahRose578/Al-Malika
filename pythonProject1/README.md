@@ -35,7 +35,7 @@ FLUSH PRIVILEGES;*
 - Open `config.py` and replace the placeholders with your MySQL database details:
 
    ```python
-   sb_config = {
+   db_config = {
        'host': 'local host',
        'user': 'almalika',
        'password': 'cfg2023',
