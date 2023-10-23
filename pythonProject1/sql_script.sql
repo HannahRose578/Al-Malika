@@ -1,6 +1,10 @@
 create database BookClub;
 USE BookClub;
 
+CREATE USER 'almalika'@'localhost' IDENTIFIED BY 'cfg2023';
+GRANT ALL PRIVILEGES ON *.* TO 'almalika'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
 CREATE TABLE Books (
 title VARCHAR(200),
 author VARCHAR(200),
