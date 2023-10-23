@@ -12,15 +12,6 @@ def get_books():
     close_connection(connection)
     return jsonify(books)
 
-# Return Authors beginning with A
-@app.route('/books/author', methods=['GET'])
-def get_author_A():
-    connection = connect_to_db()
-    query = "SELECT * FROM Books WHERE author LIKE 'a%'"
-    books = execute_query(connection, query)
-    close_connection(connection)
-    return jsonify(books)
-
 # Get books by genre
 @app.route('/books/genre/<genre>', methods=['GET'])
 def get_books_by_genre(genre):
