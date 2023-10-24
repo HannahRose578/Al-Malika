@@ -62,9 +62,7 @@ Once the API has fully loaded it will automatically open a new window for our 'c
 
 ## Client Interaction
 
-You can interact with the API using the provided main.py script. To simulate interaction with the API, run the following command:
-  
-*python main.py*
+You can interact with the API using the provided main.py script. It laucnhes automatically together with the api. Simply run 'python app.py' 
 
 ## Example Usage
 
