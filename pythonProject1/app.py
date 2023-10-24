@@ -88,5 +88,7 @@ if __name__ == '__main__':
     if only_once:
         if system() == "Windows":
             subprocess.Popen("start cmd.exe /k python main.py", shell=True)
+        elif system() == "Darwin":  # Darwin is the system name for macOS
+            subprocess.Popen(["osascript", "-e", 'tell app "Terminal" to do script "python3 main.py"'])
         only_once = False
     app.run(debug=True, use_reloader=False)
