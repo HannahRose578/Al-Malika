@@ -16,9 +16,9 @@
 Before running the code, make sure you have the following dependencies installed:
 
 - Python 3.x
-- Flask
 - MySQL
-- `pymysql` library
+
+Any other dependencies will be automatically installed 
 
 ## Configuration
 
@@ -48,7 +48,9 @@ To start the Flask application, run the following command:
 
 *python app.py*
 
-The API will be accessible at http://127.0.0.1:5000/.
+If it doesn't detect a config file for the DB Login it will ask the user for their DB login information and automatically creates the config.py file for them.
+
+Once the API has fully loaded it will automatically open a new window for our 'client', a small cli app to interact wtih the endpoints
 
 ## API Endpoints
 
