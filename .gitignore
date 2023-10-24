@@ -1,1 +1,2 @@
-
+A .gitignore file is used to specify which files or directories should be excluded from being tracked or committed in a Git repository. 
+It allows developers to specify patterns of files or paths that Git should ignore, preventing them from being included in version history.
