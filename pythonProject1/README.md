@@ -62,8 +62,18 @@ Once the API has fully loaded it will automatically open a new window for our 'c
 
 ## Client Interaction
 
-You can interact with the API using the provided main.py script. It laucnhes automatically together with the api. Simply run 'python app.py' 
+You can interact with the API using the provided `main.py` script. The updated `main.py` script allows you to perform the following actions:
+
+1. **Get All Books**: Retrieve a list of all books in the database.
+
+2. **Add a New Book**: Add a new book to the database. You will be prompted to enter the title and author of the book.
+
+3. **Update a Book**: Update the title and author of an existing book. You will be prompted to enter the book ID, new title, and new author.
+
+4. **Get a Random Book**: Retrieve a random book from the database.
+
+5. **Get All Unique Genres**: Retrieve a list of all unique book genres in the database.
 
 ## Example Usage
 
-When you run *main.py*, you will have the option to view the list of books and make various requests to the API.
+When you run *main.py*, you will have 5 options (see above). Follow the prompts and make your selection. The client script will make requests to the API and display the results, allowing you to interact with the book database.
