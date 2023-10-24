@@ -55,10 +55,12 @@ Once the API has fully loaded it will automatically open a new window for our 'c
 ## API Endpoints
 
 - **GET /books:** Get a list of all books.
-- **GET /books/genre/{genre}:** Get books by a specific genre.
-- **GET /books/author:** Get books by authors whose names start with 'A'.
+- **PUT /books/<int:book_id>:** Change a book's author and title via its ID
+- **GET /random_book:** Gets a random book.
 - **POST /books:** Add a new book.
-- **PUT /books/{isbn}:** Update the genre of a book by ISBN.
+- **GET /books/genre:**  Retrieves and returns a list of all unique genres present in the database.
+
+@app.route('/books/<int:book_id>', methods=['PUT']): Updates the title and author of a book in the database based on the given book ID.
 
 ## Client Interaction
 
