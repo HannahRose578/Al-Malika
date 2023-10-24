@@ -1,1 +1,2 @@
-
+A requirements.txt file is used to list the dependencies or libraries required by a Python project. 
+It specifies the packages and their versions that need to be installed for the user to run the project successfully.
