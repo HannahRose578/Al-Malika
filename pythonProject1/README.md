@@ -60,8 +60,6 @@ Once the API has fully loaded it will automatically open a new window for our 'c
 - **POST /books:** Add a new book.
 - **GET /books/genre:**  Retrieves and returns a list of all unique genres present in the database.
 
-@app.route('/books/<int:book_id>', methods=['PUT']): Updates the title and author of a book in the database based on the given book ID.
-
 ## Client Interaction
 
 You can interact with the API using the provided main.py script. It laucnhes automatically together with the api. Simply run 'python app.py' 
