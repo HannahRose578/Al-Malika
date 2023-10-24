@@ -1,56 +1,63 @@
 import requests
 import json
 
-headers = {'content-type': 'application/json'}
+BASE_URL = "http://localhost:5000"
 
-# GET all books
-result = requests.get('http://127.0.0.1:5000/books', headers=headers)
-print(result.json())
+def get_all_books():
+    response = requests.get(f"{BASE_URL}/books")
+    print("Get All Books:")
+    print(json.dumps(response.json(), indent=4))
 
-# Specific get request by genre
-def get_books_by_genre(genre):
-    genre_result = requests.get(
-        f'http://127.0.0.1:5000/books/genre/{genre}',
-        headers={'content-type': 'application/json'}
-    )
-    print(genre_result.json())
-    return genre_result.json()
+def add_new_book():
+    title = input("Enter the title of the book: ")
+    author = input("Enter the author of the book: ")
+    new_book = {'title': title, 'author': author}
+    response = requests.post(f"{BASE_URL}/books", json=new_book)
+    print("Add a New Book:")
+    print(json.dumps(response.json(), indent=4))
 
-# POST REQUEST
-def add_new_book(title, author, publication_year, isbn, genre):
-    new_book = {
-        "title": title,
-        "author": author,
-        "publication_year": publication_year,
-        "isbn": isbn,
-        "genre": genre
-    }
-    result = requests.post('http://127.0.0.1:5000/books', headers=headers, data=json.dumps(new_book))
-    print(result.json())
-    return result.json()
+def update_book():
+    book_id = input("Enter the book ID to update: ")
+    title = input("Enter the new title: ")
+    author = input("Enter the new author: ")
+    updated_book = {'title': title, 'author': author}
+    response = requests.put(f"{BASE_URL}/books/{book_id}", json=updated_book)
+    print("Update a Book:")
+    print(json.dumps(response.json(), indent=4))
 
-# PUT REQUEST
-def update_genre(isbn, genre):
-    updated_genre = {
-        "genre": genre,
-        "isbn": isbn
-    }
-    result = requests.put(f'http://127.0.0.1:5000/books/{isbn}', headers=headers, data=json.dumps(updated_genre))
-    print(result.json())
-    return result.json()
+def get_random_book():
+    response = requests.get(f"{BASE_URL}/random_book")
+    print("Get a Random Book:")
+    print(json.dumps(response.json(), indent=4))
 
-def run():
-    print('############################')
-    print('Hello, welcome to our bookclub')
-    print('############################')
-    print()
-    get_book_list = input('Would you like to see what books we have been reading (y/n)?: ')
-    if get_book_list.lower() == 'y':
-        result = requests.get('http://127.0.0.1:5000/books', headers=headers)
-        pretty_result = json.dumps(result.json(), indent=4)
-        print(pretty_result)
+def get_unique_genres():
+    response = requests.get(f"{BASE_URL}/books/genre")
+    print("All Unique Genres:")
+    print(json.dumps(response.json(), indent=4))
+
+while True:
+    print("\nChoose an option:")
+    print("1. Get All Books")
+    print("2. Add a New Book")
+    print("3. Update a Book")
+    print("4. Get a Random Book")
+    print("5. Get All Unique Genres")
+    print("6. Exit")
+
+    choice = input("\nEnter your choice: ")
+
+    if choice == '1':
+        get_all_books()
+    elif choice == '2':
+        add_new_book()
+    elif choice == '3':
+        update_book()
+    elif choice == '4':
+        get_random_book()
+    elif choice == '5':
+        get_unique_genres()
+    elif choice == '6':
+        print("Exiting...")
+        break
     else:
-        print('Maybe another time!')
-
-if __name__ == '__main__':
-    run()
+        print("Invalid choice. Please try again.")
